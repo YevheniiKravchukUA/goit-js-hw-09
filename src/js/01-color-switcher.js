@@ -8,20 +8,20 @@ function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
 }
 
-buttonStop.setAttribute('disabled', true);
+buttonStop.setAttribute('disabled', '');
 
 buttonStart.addEventListener('click', e => {
   colorSwitcher = setInterval(() => {
     body.style.backgroundColor = getRandomHexColor();
   }, 1000);
 
-  buttonStart.setAttribute('disabled', true);
+  buttonStart.setAttribute('disabled', '');
   buttonStop.removeAttribute('disabled');
 });
 
 buttonStop.addEventListener('click', e => {
   clearInterval(colorSwitcher);
 
-  buttonStop.setAttribute('disabled', true);
+  buttonStop.setAttribute('disabled', '');
   buttonStart.removeAttribute('disabled');
 });
