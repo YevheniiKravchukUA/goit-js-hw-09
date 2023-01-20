@@ -28,7 +28,7 @@ const options = {
 
 let intervalIsActive = false;
 let timer = 0;
-let lettimerIntervalId;
+let lettimerIntervalId = 12;
 
 function convertMs(ms) {
   // Number of milliseconds per unit of time
