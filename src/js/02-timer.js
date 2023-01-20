@@ -28,7 +28,7 @@ const options = {
 
 let intervalIsActive = false;
 let timer = 0;
-let lettimerIntervalId = 12;
+let timerIntervalId;
 
 function convertMs(ms) {
   // Number of milliseconds per unit of time
@@ -51,10 +51,10 @@ function convertMs(ms) {
 
 function onStartButtonClick(evt) {
   if (intervalIsActive) {
-    clearInterval(timerInterval);
+    clearInterval(timerIntervalId);
   }
 
-  timerInterval = setInterval(() => {
+  timerIntervalId = setInterval(() => {
     const { days, hours, minutes, seconds } = convertMs(timer);
 
     intervalIsActive = true;
@@ -80,7 +80,7 @@ function onStartButtonClick(evt) {
       }
     });
     if (timer <= 0) {
-      clearInterval(timerInterval);
+      clearInterval(timerIntervalId);
       Notiflix.Notify.success('Its Done!');
     }
   }, 1001);
