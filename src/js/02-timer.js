@@ -82,7 +82,7 @@ function onStartButtonClick(evt) {
       clearInterval(timerInterval);
       Notiflix.Notify.success('Its Done!');
     }
-  }, 1000);
+  }, 1001);
 }
 
 startButton.setAttribute('disabled', true);
